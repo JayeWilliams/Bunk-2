@@ -447,7 +447,26 @@ function draw() {
     //set background
     background(255, 240, 255);
 
-    
+    //set up and display text
+    push();
+    textSize(30);
+    textAlign(CENTER);
+    text("Did you win?", width/2, height/2);
+    textSize(10);
+    text("Press something", width/2, 400);
+    pop();
+
+  }
+
+  //state 10
+  if(state === 10) {
+    //set background
+    background(167, 118, 242);
+
+    //set up and display text
+    push();
+    textSize(45);
+    text("Congrats", 90, 200);
   }
 }
 
@@ -466,6 +485,9 @@ function keyPressed() {
   }
   if (key === "1") {
     state = 4;
+  }
+  if (key === "e" || key === "E") {
+    state = 10;
   }
 }
 
