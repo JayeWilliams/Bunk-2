@@ -17,6 +17,7 @@ var timeout5Set = false;
 var timeout6Set = false;
 var timeout7Set = false;
 var timeout8Set = false;
+var timeout9Set = false;
 
 var shouldShowLine1 = false;
 var shouldShowLine2 = false;
@@ -26,6 +27,7 @@ var changeState = false;
 var showJoe = false;
 var warning = false;
 var changeAgain = false;
+var restart = false;
 
 
 var xTrue1 = false;
@@ -472,7 +474,7 @@ function draw() {
 
     //set up and display text
     push();
-    textSize(30);
+    textSize(60);
     textAlign(CENTER);
     fill(0, 100, 150);
     text("Did you win?", width/2, height/2);
@@ -482,8 +484,8 @@ function draw() {
 
   }
 
-  //state 10
-  if(state === 11) {
+  //state 11
+  if (state === 11) {
     //set background
     background(167, 118, 242);
 
@@ -492,6 +494,24 @@ function draw() {
     textSize(45);
     text("Congrats", 90, 200);
     pop();
+
+    if (timeout9Set === false){
+      setTimeout(function() {
+        restart = true;
+      }, 10000);
+      timeout9Set = true;
+    }
+    if (restart === true) {
+      state = 1;
+    }
+  }
+
+  //state 12
+  if (state === 12) {
+    //set background
+    background(0);
+
+    //set up and display text
   }
 }
 
@@ -521,6 +541,10 @@ function keyPressed() {
   //state = 11 when e is pushed
   if (key === "e" || key === "E") {
     state = 11;
+  }
+  //state = 12 when g is pressed
+  if (key === "g" || key === "G") {
+    state = 12;
   }
 }
 
