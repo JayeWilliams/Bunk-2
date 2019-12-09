@@ -176,7 +176,7 @@ function draw() {
     textSize(30);
     text(string[index], textX, 500);
 
-    textX -= 5; //3
+    textX -= 4.5; //3
     w = textWidth(string[index]);
     if (textX < -w) {
       textX = width;
@@ -184,9 +184,14 @@ function draw() {
     }
     pop();
 
-    textSize(36);
+    //set up and display text
+    push();
+    textSize(30);
     fill(233, 233, 0);
     text("Hit '1' to Continue", 100, 100);
+    textSize(15);
+    text("(after reading of course)", 100, 120);
+    pop();
   }
 
   //state 4
