@@ -502,11 +502,11 @@ function draw() {
     text("Give yourself a high-five :>", 100, 300);
     pop();
 
-    //end game after 10 seconds
+    //end game after 7 seconds
     if (timeout9Set === false){
       setTimeout(function() {
         restart1 = true;
-      }, 10000);
+      }, 7000);
       timeout9Set = true;
     }
     if (restart1 === true) {
@@ -603,7 +603,7 @@ function keyPressed() {
 
 function mouseClicked() {
   //state = 7 if mouse is in desired area and user clicks
-  if(xTrue1 && yTrue1) {
+  if(xTrue1 && yTrue1 && state === 6) {
     state = 7;
   }
   // if (xTrue2 && yTrue2) {
