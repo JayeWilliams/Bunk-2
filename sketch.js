@@ -467,6 +467,7 @@ function draw() {
     push();
     textSize(45);
     text("Congrats", 90, 200);
+    pop();
   }
 }
 
