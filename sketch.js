@@ -7,7 +7,7 @@ var textX;
 var string = ["Jeff Goldblum isn't real", "Jeff Goldblum is a sorcerer",
   "He is just a character created for the dinosaurs", "Don't you believe he's famous?"];
 var index = 0;
-var imgCouch, imgPerson, imgGinger, imgJoe;
+var imgCouch, imgPerson, imgGinger, imgJoe, imgSmile;
 
 var timeout1Set = false;
 var timeout2Set = false;
@@ -40,6 +40,7 @@ function preload() {
   imgPerson = loadImage("person.png");
   imgGinger = loadImage("ginger.png");
   imgJoe = loadImage("joe.png");
+  imgSmile = loadImage("smile.png")
 }
 
 
@@ -445,6 +446,28 @@ function draw() {
   //state 9
   if (state === 9) {
     //set background
+    background(19, 214, 117);
+
+    //place image where cursor is
+    push();
+    image(imgSmile, mouseX - 50, mouseY - 50);
+    pop();
+
+    //set and display text
+    push();
+    fill(109, 34, 214);
+    textSize(30);
+    text("That's my favorite part", 100, 300);
+    textSize(35);
+    text("Press 'n'", 700, 500);
+    pop();
+
+  }
+
+
+  //state 10
+  if (state === 10) {
+    //set background
     background(255, 240, 255);
 
     //set up and display text
@@ -460,7 +483,7 @@ function draw() {
   }
 
   //state 10
-  if(state === 10) {
+  if(state === 11) {
     //set background
     background(167, 118, 242);
 
@@ -475,9 +498,11 @@ function draw() {
 
 
 function keyPressed() {
+  //state = 2 when Enter is pressed
   if (key === "Enter") {
     state = 2;
   }
+  //state = 3 when t is pressed
   if (key === "t" || key === "T") {
     state = 3;
     clearTimeout(timer1);
@@ -485,15 +510,22 @@ function keyPressed() {
     clearTimeout(timer3);
     clearTimeout(timer4);
   }
+  //state = 4 when 1 is pressed
   if (key === "1") {
     state = 4;
   }
-  if (key === "e" || key === "E") {
+  //state = 10 when n is pressed
+  if (key === "n" || key === "N") {
     state = 10;
+  }
+  //state = 11 when e is pushed
+  if (key === "e" || key === "E") {
+    state = 11;
   }
 }
 
 function mouseClicked() {
+  //state = 7 if mouse is in desired area and user clicks
   if(xTrue1 && yTrue1) {
     state = 7;
   }
@@ -504,7 +536,7 @@ function mouseClicked() {
 
 
 /////////////////////////
-///attempted timer functions
+//timer functions for bunk definition (state 2)
 function timer1() {
   push();
   fill(255, 166, 249);
