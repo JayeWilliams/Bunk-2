@@ -507,7 +507,7 @@ function draw() {
       timeout9Set = true;
     }
     if (restart1 === true) {
-      state = 1;
+      state = 13;
     }
   }
 
@@ -532,7 +532,35 @@ function draw() {
       timeout10Set = true;
     }
     if (restart2 === true) {
-      state = 1;
+      state = 13;
+    }
+  }
+
+  //state 13
+  if (state === 13) {
+    //set background
+    background(234, 223, 234);
+
+    //set up and draw text
+    // push();
+    // fill(0);
+    // textSize(24);
+    // translate(width/2, height/2);
+    // text("Press 'Enter' to Start", 0, 0);
+    // pop();
+
+    //make bouncing ball
+    fill(255, 8, 0);
+    ellipse(xPos, yPos, radius*3, radius*3);
+
+    xPos += xSpeed;
+    yPos += ySpeed;
+
+    if (xPos > width - radius || xPos < radius) {
+      xSpeed = -xSpeed;
+    }
+    if (yPos > height - radius || yPos < radius) {
+      ySpeed = -ySpeed;
     }
   }
 }
