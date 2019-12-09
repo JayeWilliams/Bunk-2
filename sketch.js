@@ -384,63 +384,63 @@ function draw() {
     }
   }
 
-  //state 8
-  if (state === 8) {
-    //set background
-    background(189, 6, 6);
-
-    if (timeout6Set == false) {
-      setTimeout(function() {
-        warning = true;
-      }, 1000);
-      timeout6Set = true;
-    }
-    if (warning) {
-      //set up and display text
-      push();
-      textSize(40);
-      textAlign(CENTER);
-      text("VIEWER DISCRETION ADVISED", width/2, height/2);
-      textSize(15);
-      text("You've been warned", 120, 550);
-      pop();
-    }
-
-    if (timeout7Set == false){
-      setTimeout(function() {
-        showJoe = true;
-      }, 5000);
-      timeout7Set = true;
-    }
-    if (showJoe == true) {
-      //set background
-      background(189, 6, 6);
-
-      //set up and display text
-      push();
-      fill(243, 245, 223);
-      textSize(45);
-      textAlign(CENTER);
-      text("1-800 CHOKE DAT HOE!", width/2, height/2);
-      textSize(25);
-      text("-Joe 'Madea's Big Happy Family'", width/2, height/2 + 25);
-      pop();
-
-      //show image
-      image(imgJoe, 100, 50);
-      image(imgJoe, 300, 400);
-      image(imgJoe, 600, 75);
-    }
-
-    if (timeout8Set === false) {
-      setTimeout(function() {
-        changeAgain = true;
-      }, 10000);
-    }
-    if (changeAgain === true) {
-      state = 9;
-    }
-  }
+  // //state 8
+  // if (state === 8) {
+  //   //set background
+  //   background(189, 6, 6);
+  //
+  //   if (timeout6Set == false) {
+  //     setTimeout(function() {
+  //       warning = true;
+  //     }, 1000);
+  //     timeout6Set = true;
+  //   }
+  //   if (warning) {
+  //     //set up and display text
+  //     push();
+  //     textSize(40);
+  //     textAlign(CENTER);
+  //     text("VIEWER DISCRETION ADVISED", width/2, height/2);
+  //     textSize(15);
+  //     text("You've been warned", 120, 550);
+  //     pop();
+  //   }
+  //
+  //   if (timeout7Set == false){
+  //     setTimeout(function() {
+  //       showJoe = true;
+  //     }, 5000);
+  //     timeout7Set = true;
+  //   }
+  //   if (showJoe == true) {
+  //     //set background
+  //     background(189, 6, 6);
+  //
+  //     //set up and display text
+  //     push();
+  //     fill(243, 245, 223);
+  //     textSize(45);
+  //     textAlign(CENTER);
+  //     text("1-800 CHOKE DAT HOE!", width/2, height/2);
+  //     textSize(25);
+  //     text("-Joe 'Madea's Big Happy Family'", width/2, height/2 + 25);
+  //     pop();
+  //
+  //     //show image
+  //     image(imgJoe, 100, 50);
+  //     image(imgJoe, 300, 400);
+  //     image(imgJoe, 600, 75);
+  //   }
+  //
+  //   if (timeout8Set === false) {
+  //     setTimeout(function() {
+  //       changeAgain = true;
+  //     }, 10000);
+  //   }
+  //   if (changeAgain === true) {
+  //     state = 9;
+  //   }
+  // }
 
   //state 9
   if (state === 9) {
