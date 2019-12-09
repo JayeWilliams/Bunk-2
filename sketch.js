@@ -18,6 +18,7 @@ var timeout6Set = false;
 var timeout7Set = false;
 var timeout8Set = false;
 var timeout9Set = false;
+var timeout10Set = false;
 
 var shouldShowLine1 = false;
 var shouldShowLine2 = false;
@@ -27,7 +28,8 @@ var changeState = false;
 var showJoe = false;
 var warning = false;
 var changeAgain = false;
-var restart = false;
+var restart1 = false;
+var restart2 = false;
 
 
 var xTrue1 = false;
@@ -493,15 +495,18 @@ function draw() {
     push();
     textSize(45);
     text("Congrats", 90, 200);
+    textSize(30);
+    text("Give yourself a high-five :>", 100, 300);
     pop();
 
+    //restart game after 10 seconds
     if (timeout9Set === false){
       setTimeout(function() {
-        restart = true;
+        restart1 = true;
       }, 10000);
       timeout9Set = true;
     }
-    if (restart === true) {
+    if (restart1 === true) {
       state = 1;
     }
   }
@@ -512,6 +517,23 @@ function draw() {
     background(0);
 
     //set up and display text
+    push();
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("Data Lost", width/2, height/2);
+    pop();
+
+    //restart game after 1 sec
+    if (timeout10Set === false){
+      setTimeout(function() {
+        restart2 = true;
+      }, 1000);
+      timeout10Set = true;
+    }
+    if (restart2 === true) {
+      state = 1;
+    }
   }
 }
 
