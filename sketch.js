@@ -176,7 +176,7 @@ function draw() {
     textSize(30);
     text(string[index], textX, 500);
 
-    textX -= 3;
+    textX -= 5; //3
     w = textWidth(string[index]);
     if (textX < -w) {
       textX = width;
