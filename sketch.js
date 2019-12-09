@@ -261,6 +261,8 @@ function draw() {
 
     //draw player circle and first circle
     //ellipse(orbs[0].x, orbs[0].y, orbs[0].radius, orbs[0].radius);
+    push();
+    fill(245, 7, 126);
     ellipse(pCircle.x, pCircle.y, pCircle.radius, pCircle.radius);
     ellipse(circle1.x, circle1.y, circle1.radius, circle1.radius);
 
@@ -303,6 +305,7 @@ function draw() {
     if (showC5) {
       ellipse(circle5.x, circle5.y, circle5.radius, circle5.radius);
     }
+    pop();
   }
 
   //state 5
