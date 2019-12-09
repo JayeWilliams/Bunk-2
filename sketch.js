@@ -370,6 +370,8 @@ function draw() {
     text("CLICK", 20, 570);
     pop();
 
+    /////////////////////////////////
+    //attemtped to detect where mouse was
     // //detect if mouse is clicked over "CLICK"
     // if (mouseX >= 15 || mouseX <= 30) {
     //   xTrue2 = true;
@@ -377,6 +379,7 @@ function draw() {
     // if (mouseY >= 560 || mouseY <= 580) {
     //   yTrue2 = true;
     // }
+
     //change the state to 8 after 5 seconds
     if (timeout5Set == false){
       setTimeout(function() {
@@ -499,7 +502,7 @@ function draw() {
     text("Give yourself a high-five :>", 100, 300);
     pop();
 
-    //restart game after 10 seconds
+    //end game after 10 seconds
     if (timeout9Set === false){
       setTimeout(function() {
         restart1 = true;
@@ -524,11 +527,11 @@ function draw() {
     text("Data Lost", width/2, height/2);
     pop();
 
-    //restart game after 1 sec
+    //end game after 1 1/2 sec
     if (timeout10Set === false){
       setTimeout(function() {
         restart2 = true;
-      }, 1000);
+      }, 1500);
       timeout10Set = true;
     }
     if (restart2 === true) {
@@ -542,12 +545,12 @@ function draw() {
     background(234, 223, 234);
 
     //set up and draw text
-    // push();
-    // fill(0);
-    // textSize(24);
-    // translate(width/2, height/2);
-    // text("Press 'Enter' to Start", 0, 0);
-    // pop();
+    push();
+    fill(0);
+    textSize(24);
+    textAlign(CENTER);
+    text("Bye", width/2, height/2);
+    pop();
 
     //make bouncing ball
     fill(255, 8, 0);
@@ -603,13 +606,12 @@ function mouseClicked() {
   if(xTrue1 && yTrue1) {
     state = 7;
   }
-  // if(xTrue2 && yTrue2) {
+  // if (xTrue2 && yTrue2) {
   //   state = 8;
   // }
 }
 
 
-/////////////////////////
 //timer functions for bunk definition (state 2)
 function timer1() {
   push();
