@@ -451,7 +451,7 @@ function draw() {
     push();
     textSize(30);
     textAlign(CENTER);
-    fill(0, 100, 100);
+    fill(0, 100, 150);
     text("Did you win?", width/2, height/2);
     textSize(10);
     text("Press something", width/2, 400);
