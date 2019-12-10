@@ -580,11 +580,11 @@ function draw() {
 
 function keyPressed() {
   //state = 2 when Enter is pressed
-  if (key === "Enter") {
+  if (key === "Enter" && state === 1) {
     state = 2;
   }
   //state = 3 when t is pressed
-  if (key === "t" || key === "T") {
+  if (key === "t" || key === "T" && state === 2) {
     state = 3;
     clearTimeout(timer1);
     clearTimeout(timer2);
@@ -592,19 +592,19 @@ function keyPressed() {
     clearTimeout(timer4);
   }
   //state = 4 when 1 is pressed
-  if (key === "1") {
+  if (key === "1" && state === 3) {
     state = 4;
   }
   //state = 10 when n is pressed
-  if (key === "n" || key === "N") {
+  if (key === "n" || key === "N" && state === 9) {
     state = 10;
   }
   //state = 11 when e is pushed
-  if (key === "e" || key === "E") {
+  if (key === "e" || key === "E" && state === 10) {
     state = 11;
   }
   //state = 12 when g is pressed
-  if (key === "g" || key === "G") {
+  if (key === "g" || key === "G" && state === 10) {
     state = 12;
   }
 }
